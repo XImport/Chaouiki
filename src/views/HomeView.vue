@@ -22,6 +22,7 @@ import SubNavBarVue from "@/components/SubNavBar.vue";
 import ProductsVue from "@/components/ProductsVue.vue";
 import Footervue from "@/components/FooterVue.vue";
 import JamboTron from "@/components/JamboTron.vue";
+import { mapGetters } from "vuex";
 export default {
   name: "HelloWorld",
   components: {
@@ -43,12 +44,10 @@ export default {
   },
 
   computed: {
-    products() {
-      return this.$store.getters.products;
-    },
-    lastproducts() {
-      return this.$store.getters.lastproducts;
-    },
+    ...mapGetters(
+      ["products", "lastproducts"]
+      // Here you can import other getters from the products.js
+    ),
   },
 };
 </script>

@@ -1,7 +1,9 @@
 <template>
   <div>
     <v-app-bar dense dark color="accent">
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        class="d-none d-md-flex d-lg-none"
+      ></v-app-bar-nav-icon>
       <v-toolbar-title>CATEGORIES</v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -12,7 +14,7 @@
     </v-app-bar>
 
     <div class="d-flex pa-2" outlined tile>
-      <v-navigation-drawer class="white" permanent>
+      <v-navigation-drawer class="white hidden-md-and-down" permanent>
         <v-list rounded>
           <v-subheader>CATEGORIES LIST</v-subheader>
           <v-list-item-group v-model="selectedItem" color="primary">
@@ -27,6 +29,7 @@
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
+
       <v-container>
         <SliderVueVue />
       </v-container>
